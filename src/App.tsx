@@ -1,10 +1,11 @@
 import React from 'react';
-import './App.css';
+import {MainScreen}  from './components/MainScreen'
 
 function App() {
   return (
-    <div className="App">
-    WEATHER APP
+    <div>
+   <MainScreen />
+
     </div>
   );
 }

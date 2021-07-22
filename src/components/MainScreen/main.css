@@ -1,0 +1,9 @@
+.mainWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-image {
+    height: 300px;
+    width: 375px;
+}
