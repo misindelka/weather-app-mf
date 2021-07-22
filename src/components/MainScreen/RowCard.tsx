@@ -1,4 +1,5 @@
 import React from 'react'
+import './main.css'
 
 export const RowCard = () => {
     return (
@@ -6,10 +7,10 @@ export const RowCard = () => {
             <div className="card-icon">
                 Icon
             </div>
-            <p className="value">
+            <p className="card-value">
               56%
             </p>
-            <p className="title">humidity</p>
+            <p className="card-title">humidity</p>
         </div>
     )
 }

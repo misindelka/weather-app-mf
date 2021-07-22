@@ -1,0 +1,36 @@
+.current-weather {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.current-condition {}
+
+.condition-icon {
+    color: #AAAAAA;
+}
+
+.condition-value {
+    font-family: Barlow;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: -0.05em;
+    color: #000000;
+}
+
+.temperature p {
+    font-family: Barlow;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 34px;
+    letter-spacing: -0.05em;
+    color: #000000;
+}
+
+.temp-diff p {
+    font-family: Barlow;
+    font-weight: 300;
+    font-size: 16px;
+    color: #666666;
+}
