@@ -1,7 +1,12 @@
 import React from 'react'
 import './main.css'
 
-export const Headings:React.FC = () => {
+interface IProps {
+    search: boolean
+    setSearch: (search: boolean) => void
+}
+
+export const Headings:React.FC<IProps> = ({search, setSearch}) => {
     return (
         <div className="headings">
             <div className="date">
@@ -9,6 +14,7 @@ export const Headings:React.FC = () => {
             </div>
             <div className="location">
                <p >KOSICE, Slovakia</p> 
+               <button className="search-button" onClick={() => setSearch(!search)}>x</button>
             </div>
         </div>
     )

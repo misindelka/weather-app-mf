@@ -1,7 +1,7 @@
 import React from 'react';
 import {MainScreen}  from './components/MainScreen'
 
-function App() {
+const App:React.FC = () => {
   return (
     <div>
    <MainScreen />

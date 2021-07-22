@@ -4,7 +4,6 @@
 }
 
 .main-image {
-    position: absolute;
     height: 300px;
     left: 0px;
     top: 0px;
@@ -105,4 +104,14 @@
     font-size: 8px;
     letter-spacing: 0.1em;
     color: #999999;
+}
+
+.search-panel {
+    position: absolute;
+    width: 375px;
+    height: 781px;
+    left: 0px;
+    top: 29px;
+    background: #FFFFFF;
+    box-shadow: 0px -16px 40px rgba(0, 0, 0, 0.2);
 }
