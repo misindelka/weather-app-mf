@@ -1,10 +1,11 @@
 import React from 'react';
-import './App.css';
+import {MainScreen}  from './components/MainScreen'
 
-function App() {
+const App:React.FC = () => {
   return (
-    <div className="App">
-    WEATHER APP
+    <div>
+   <MainScreen />
+
     </div>
   );
 }
