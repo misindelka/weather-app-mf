@@ -1,7 +1,11 @@
 import React from 'react';
 import './search.css';
 
-export const Search: React.FC = () => {
+interface ISearch {
+	cities:any
+}
+
+export const Search: React.FC<ISearch> = ({cities}) => {
 	return (
 		<div className='search'>
 			<p className='location'> Location</p>
@@ -10,10 +14,10 @@ export const Search: React.FC = () => {
 				type='text'
 				placeholder='Search city...'
 			/>
-			<div className='results'>
-			 <p>City</p>
+			{cities.map((city:string) => <div className='results'>
+			 <p>{city}</p>
              <p className='temp'>35 C</p>
-			</div>
+			</div>)}
 		</div>
 	);
 };

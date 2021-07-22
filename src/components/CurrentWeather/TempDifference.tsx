@@ -1,10 +1,19 @@
-import React from 'react';
+import React from 'react'
 
-export const TempDifference = () => {
+interface IProps {
+	temperature: {
+		temp_max: number
+		temp_min: number
+	}
+}
+
+export const TempDifference: React.FC<IProps> = ({ temperature }) => {
+	const maxTemp = (temperature?.temp_max - 273.15).toFixed();
+	const minTemp = (temperature?.temp_min - 273.15).toFixed();
 	return (
 		<div className='temp-diff'>
-			<p>33 C</p>
-			<p>22 C</p>
+			<p>{minTemp} C</p>
+			<p>{maxTemp} C</p>
 		</div>
-	);
-};
+	)
+}
