@@ -51,7 +51,7 @@ export const Search: React.FC<ISearch> = ({ handleChangeCurrentCity }) => {
 					className='results'
 					onClick={() => handleChangeCurrentCity(name)}>
 					<p>{name}</p>
-					<p className='temp'>{temp}C</p>
+					<p>{temp}<span>&#8451;</span></p>
 				</div>
 			))}
 		</div>
