@@ -1,18 +1,17 @@
 import React from 'react'
+import { IForecastData } from '../../types'
 
 import './forecast.css'
 
 interface IForecastProps {
-	forecastData: any
-	
+	forecastData: IForecastData
 }
 
 export const Forecast: React.FC<IForecastProps> = ({ forecastData }) => {
 	const icon = 'icon'
 	const data = forecastData.list?.map((item: any) => item).slice(0, 3)
 
-	const options:any = { weekday: 'short', day: 'numeric' }
-
+	const options: any = { weekday: 'short', day: 'numeric' }
 
 	return (
 		<div className='forecast'>

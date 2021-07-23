@@ -1,13 +1,12 @@
-import React from 'react';
-import {MainScreen}  from './components/MainScreen'
+import React from 'react'
+import { MainScreen } from './components/MainScreen'
 
-const App:React.FC = () => {
-  return (
-    <div>
-   <MainScreen />
-
-    </div>
-  );
+const App: React.FC = () => {
+	return (
+		<div>
+			<MainScreen />
+		</div>
+	)
 }
 
-export default App;
+export default App

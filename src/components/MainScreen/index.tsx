@@ -5,8 +5,8 @@ import { CurrentWeather } from '../CurrentWeather'
 import { Forecast } from '../Forecast'
 import { Search } from '../Search'
 import * as Image from '../../assets/bakground.jpg'
-import { IWeatherData ,IForecastData} from '../../types'
-import {initialForecastData,initialWeaterData,cities} from '../../constants'
+import { IWeatherData, IForecastData } from '../../types'
+import { initialForecastData, initialWeaterData } from '../../constants'
 import './main.css'
 
 const image = Image.default
@@ -18,25 +18,17 @@ interface IProps {
 	city: string
 }
 
-
-
 export const MainScreen: React.FC = () => {
 	const [search, setSearch] = useState<IProps['search']>(false)
 	const [weather, setWeather] = useState<IProps['apiData']>(initialWeaterData)
-	const [forecastData, setForecast] = useState<IProps['forecastData']>(initialForecastData)
+	const [forecastData, setForecast] = useState<IProps['forecastData']>(
+		initialForecastData
+	)
 	const [city, setCity] = useState<IProps['city']>('Košice')
 
 	const apiKey: string = process.env.REACT_APP_API_KEY as string
 	const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
 	const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`
-
-	const weatherError =(err: any) => {
-		throw new Error('Weather data fail!')
-	}
-
-	const forecastError =(err: any) => {
-		throw new Error('Forecast data fail!')
-	}
 
 	useEffect(() => {
 		fetch(weatherUrl)
@@ -45,8 +37,6 @@ export const MainScreen: React.FC = () => {
 			.catch(weatherError)
 	}, [weatherUrl])
 
-
-	
 	useEffect(() => {
 		fetch(forecastUrl)
 			.then((res) => res.json())
@@ -54,8 +44,18 @@ export const MainScreen: React.FC = () => {
 			.catch(forecastError)
 	}, [forecastUrl])
 
+	const weatherError = () => {
+		console.log('Weather data fail!')
+	}
 
+	const forecastError = () => {
+		console.log('Forecast data fail!')
+	}
 
+	const handleChageCurrentCity = (name: any): void => {
+		setCity(name)
+		setSearch(!search)
+	}
 
 	return (
 		<div className='main-wrapper'>
@@ -67,20 +67,15 @@ export const MainScreen: React.FC = () => {
 						setSearch={setSearch}
 						city={city}
 					/>
-					<CurrentWeather apiData={weather} />
-					<Row apiData={weather} />
+					<CurrentWeather weatherData={weather} />
+					<Row weatherData={weather} />
 					<Forecast forecastData={forecastData} />
 				</div>
 			) : (
 				<div className='search-panel'>
-					<Search cities={cities} />
+					<Search handleChangeCurrentCity={handleChageCurrentCity} />
 				</div>
 			)}
 		</div>
 	)
 }
-
-
-
-
-
