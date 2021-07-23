@@ -1,11 +1,15 @@
-import React from 'react';
-import './search.css';
+import React from 'react'
+import './search.css'
 
 interface ISearch {
-	cities:any
+	cities: {
+		id: number
+		name: string
+		temp: number
+	}[]
 }
 
-export const Search: React.FC<ISearch> = ({cities}) => {
+export const Search: React.FC<ISearch> = ({ cities}) => {
 	return (
 		<div className='search'>
 			<p className='location'> Location</p>
@@ -14,10 +18,12 @@ export const Search: React.FC<ISearch> = ({cities}) => {
 				type='text'
 				placeholder='Search city...'
 			/>
-			{cities.map((city:string) => <div className='results'>
-			 <p>{city}</p>
-             <p className='temp'>35 C</p>
-			</div>)}
+			{cities.map(({ id, name, temp }) => (
+				<div key={id} className='results'>
+					<p>{name}</p>
+					<p className='temp'>{temp}C</p>
+				</div>
+			))}
 		</div>
-	);
-};
+	)
+}

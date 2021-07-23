@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+
 import './main.css'
 
 import * as Humidity from '../../assets/humidity.jpg'
@@ -14,7 +16,7 @@ const humidityImg = Humidity.default
 const PresureImg = Presure.default
 const WindImg = Wind.default
 const SunriseImg = Sunrise.default
-const SunsetImg = Sunset.default
+const SunsetImg =Sunset.default
 const DaytimeImg = Daytime.default
 
 interface RowProps {
@@ -22,8 +24,12 @@ interface RowProps {
 }
 
 export const Row: React.FC<RowProps> = ({ apiData }) => {
-	const sunrise = moment(apiData.sys?.sunrise).format('h:mm')
-	const sunset = moment(apiData.sys?.sunset).format('h:mm')
+
+ ;
+    const sunrise = moment(apiData.sys?.sunrise).format('h:mm')
+    const sunset = moment(apiData.sys?.sunset).format('h:mm')
+
+
 
 	return (
 		<div className='row'>
@@ -39,29 +45,27 @@ export const Row: React.FC<RowProps> = ({ apiData }) => {
 				<p className='card-title'>Pressure</p>
 			</div>
 
-			<div className='row-card'>
+            <div className='row-card'>
 				<img src={WindImg} alt='some' className='card-icon' />
 				<p className='card-value'>{apiData.wind?.speed}km/h</p>
 				<p className='card-title'>Wind</p>
 			</div>
 
 			<div className='row-card'>
-				<img src={SunriseImg} alt='some' className='card-icon' />
+            <img src={SunriseImg} alt='some' className='card-icon' />
 				<p className='card-value'>{sunrise}AM </p>
 				<p className='card-title'>Sunrise</p>
 			</div>
 
 			<div className='row-card'>
-				<img src={SunsetImg} alt='some' className='card-icon' />
+            <img src={SunsetImg} alt='some' className='card-icon' />
 				<p className='card-value'>{sunset} PM</p>
 				<p className='card-title'>Sunset</p>
 			</div>
 
 			<div className='row-card'>
-				<img src={DaytimeImg} alt='some' className='card-icon' />
-				<p className='card-value'>
-					{moment(apiData.coord?.dt).format('hh:mm')}{' '}
-				</p>
+            <img src={DaytimeImg} alt='some' className='card-icon' />
+				<p className='card-value'>{moment(apiData.coord?.dt).format('hh:mm')} </p>
 				<p className='card-title'>Daytime</p>
 			</div>
 		</div>
