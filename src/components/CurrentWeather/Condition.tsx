@@ -17,7 +17,7 @@ export const Condition: React.FC<IProps> = ({ weather }) => {
 			{weather?.map(({ description, id }) => (
 				<div key={id} className='current-condition'>
 					<img src={cloud} alt='some' className='condition-icon' />
-					<p className='contion-value'>{description}</p>
+					<p className='condition-value'>{description}</p>
 				</div>
 			))}
 		</div>

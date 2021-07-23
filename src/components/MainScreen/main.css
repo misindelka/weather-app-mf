@@ -22,6 +22,8 @@
     top: 279px;
     background: #FFFFFF;
     box-shadow: 0px -16px 40px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .headings {
@@ -29,42 +31,37 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    border-radius: 5px;
 }
 
 .date {
-    width: 208px;
-    height: 17px;
-    left: 5px;
-    top: 297px;
-    font-family: Barlow;
-    font-style: normal;
-    font-weight: normal;
+    padding: 10px;
     font-size: 14px;
     line-height: 17px;
-    /* identical to box height */
     text-align: center;
-    color: #999999
+    color: #999999;
 }
 
 .location {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 154px;
-    height: 48px;
-    left: 221px;
-    top: 279px;
-    background: rgba(13, 159, 234, 0.08);
+    background: rgba(93, 166, 203, 0.797);
+    padding-left: 5px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .location p {
-    font-family: Barlow;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
+    font-weight: 400;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #0DA0EA;
+}
+
+.places-icon {
+    height: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
     color: #0DA0EA;
 }
 
@@ -72,7 +69,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 20px;
+    padding: 0 20px 0 20px;
 }
 
 .row-card {
@@ -81,28 +78,33 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 .card-icon {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 22px;
     color: #AAAAAA;
+    margin: 5px;
 }
 
 .card-value {
-    font-family: Barlow;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
     font-size: 16px;
     letter-spacing: -0.05em;
     color: #444444;
+    margin: 5px
 }
 
 .card-title {
-    font-family: Barlow;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
-    font-size: 8px;
+    font-size: 10px;
     letter-spacing: 0.1em;
     color: #999999;
+    margin: 5px;
 }
 
 .search-panel {
@@ -113,4 +115,6 @@
     top: 29px;
     background: #FFFFFF;
     box-shadow: 0px -16px 40px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }

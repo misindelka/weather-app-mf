@@ -5,7 +5,7 @@
 }
 
 .location {
-    font-family: Barlow;
+    font-family: Arial, Helvetica, sans-serif;
     background: none;
     font-weight: 500;
     font-size: 16px;
@@ -17,11 +17,9 @@
 .search-input {
     width: 305px;
     height: 40px;
-    left: 20px;
-    top: 103px;
     background: #F3F3F3;
     border-radius: 4px;
-    font-family: Barlow;
+    font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
     font-weight: 500;
     font-size: 18px;
@@ -35,6 +33,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
     width: 290px;
-    padding: 10px;
+}
+
+.results p {
+    margin: 7px;
 }

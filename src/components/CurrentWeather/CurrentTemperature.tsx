@@ -11,7 +11,7 @@ export const CurrentTemperature: React.FC<IProps> = ({ temperature }) => {
 
 	return (
 		<div className='temperature'>
-			<p>{currentTemp} C </p>
+			<div className='temperature-value'>{currentTemp}<span className='span-letter'>&#8451;</span></div>
 		</div>
 	)
 }

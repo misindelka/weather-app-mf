@@ -5,32 +5,52 @@
     align-items: center;
 }
 
-.current-condition {}
+.current-condition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 .condition-icon {
     color: #AAAAAA;
+    width: 40px;
 }
 
 .condition-value {
-    font-family: Barlow;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
     font-size: 18px;
-    letter-spacing: -0.05em;
     color: #000000;
+    margin: 5px
 }
 
-.temperature p {
-    font-family: Barlow;
+.condition-value::first-letter {
+    text-transform: uppercase;
+}
+
+.temperature-value {
+    display: flex;
+    justify-content: baseline;
+    font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
-    font-weight: 300;
-    font-size: 34px;
+    font-size: 50px;
+    font-weight: 100;
     letter-spacing: -0.05em;
     color: #000000;
+    margin: 0;
 }
 
-.temp-diff p {
-    font-family: Barlow;
+.span-letter {
+    font-size: 20px;
+    color: #616161;
+    padding: 5px;
+}
+
+.temp-diff-item {
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 300;
     font-size: 16px;
     color: #666666;
+    margin: 20px;
 }

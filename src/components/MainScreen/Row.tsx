@@ -1,5 +1,6 @@
 import React from 'react'
 import { IWeatherData } from '../../types'
+import moment from 'moment'
 import './main.css'
 
 import * as Humidity from '../../assets/humidity.jpg'
@@ -8,7 +9,7 @@ import * as Wind from '../../assets/wind.jpg'
 import * as Sunrise from '../../assets/sunrise.jpg'
 import * as Sunset from '../../assets/sunset.jpg'
 import * as Daytime from '../../assets/sand-clock.jpg'
-import moment from 'moment'
+
 
 const humidityImg = Humidity.default
 const PresureImg = Presure.default
