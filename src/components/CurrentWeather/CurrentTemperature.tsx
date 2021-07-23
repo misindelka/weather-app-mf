@@ -1,9 +1,17 @@
 import React from 'react'
 
-export const CurrentTemperature = () => {
-    return (
-        <div className="temperature">
-            <p>33 </p>
-        </div>
-    )
+interface IProps {
+	temperature: {
+		temp: number
+	}
+}
+
+export const CurrentTemperature: React.FC<IProps> = ({ temperature }) => {
+	const currentTemp = (temperature?.temp - 273.15).toFixed()
+
+	return (
+		<div className='temperature'>
+			<p>{currentTemp} C </p>
+		</div>
+	)
 }
