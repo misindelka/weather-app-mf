@@ -10,6 +10,8 @@
     background: linear-gradient(180deg, #54B4F9 5.67%, #FFFFFF 127%);
     height: 300px;
     width: 375px;
+    background-image: url('../../assets/bakground.jpg');
+    background-size: cover;
 }
 
 .panel {
@@ -54,8 +56,9 @@
 .location p {
     font-weight: 400;
     font-size: 15px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: #0DA0EA;
+    cursor: pointer;
 }
 
 .places-icon {
@@ -117,4 +120,71 @@
     box-shadow: 0px -16px 40px rgba(0, 0, 0, 0.2);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .mainWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .main-image {
+        height: 300px;
+        width: 100%;
+        background-image: url('../../assets/background-web.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    .panel {
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        box-shadow: none;
+        ;
+    }
+    .headings {
+        background: #FFFFFF;
+        box-shadow: 0px -16px 40px rgba(0, 0, 0, 0.2);
+        justify-content: space-around;
+    }
+    .date {
+        padding: 10px;
+        font-size: 20px;
+        width: 70%;
+    }
+    .location {
+        justify-content: space-around;
+        width: 30%;
+        border-bottom-left-radius: 0px;
+    }
+    .location p {
+        font-size: 20px;
+    }
+    .places-icon {
+        height: 20px;
+        margin-left: 15px;
+    }
+    .row-card {
+        width: 125px;
+        height: 130px;
+    }
+    .card-value {
+        font-size: 20px;
+        margin: 10px
+    }
+    .card-icon {
+        width: 36px;
+        height: 32px;
+    }
+    .card-title {
+        font-size: 15px;
+    }
+    .search-panel {
+        width: 100%;
+        left: 0px;
+        top: 280px;
+        background: white;
+        box-shadow: none;
+    }
 }

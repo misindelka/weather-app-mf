@@ -54,3 +54,28 @@
     color: #666666;
     margin: 20px;
 }
+
+@media screen and (min-width: 768px) {
+    .current-condition {
+        flex-direction: row;
+    }
+    .condition-icon {
+        width: 50px;
+    }
+    .condition-value {
+        font-size: 28px;
+        margin: 15px
+    }
+    .temp-diff {
+        display: flex;
+        flex-direction: row;
+        margin: 20px
+    }
+    .temp-diff-item {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 300;
+        font-size: 26px;
+        color: #666666;
+        margin: 20px;
+    }
+}

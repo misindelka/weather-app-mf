@@ -4,12 +4,9 @@ import { Row } from './Row'
 import { CurrentWeather } from '../CurrentWeather'
 import { Forecast } from '../Forecast'
 import { Search } from '../Search'
-import * as Image from '../../assets/bakground.jpg'
 import { IWeatherData, IForecastData } from '../../types'
 import { initialForecastData, initialWeaterData } from '../../constants'
 import './main.css'
-
-const image = Image.default
 
 interface IProps {
 	search: boolean
@@ -59,7 +56,7 @@ export const MainScreen: React.FC = () => {
 
 	return (
 		<div className='main-wrapper'>
-			<img src={image} alt='some' className='main-image' />
+			<div className='main-image' />
 			{!search ? (
 				<div className='panel'>
 					<Headings
