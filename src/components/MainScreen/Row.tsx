@@ -23,8 +23,11 @@ interface RowProps {
 }
 
 export const Row: React.FC<RowProps> = ({ weatherData }) => {
-	const sunrise = moment(weatherData.sys?.sunrise).format('h:mm')
-	const sunset = moment(weatherData.sys?.sunset).format('h:mm')
+	const sunrise =  moment.unix(weatherData.sys?.sunrise).format('HH:mm')
+	const sunset = moment.unix(weatherData.sys?.sunset).format('HH:mm')
+	
+	// const  daytime = moment.duration(sunset.diff(sunrise));
+
 
 	return (
 		<div className='row'>
@@ -48,20 +51,20 @@ export const Row: React.FC<RowProps> = ({ weatherData }) => {
 
 			<div className='row-card'>
 				<img src={SunriseImg} alt='some' className='card-icon' />
-				<p className='card-value'>{sunrise}AM </p>
+				<p className='card-value'>{sunrise}</p>
 				<p className='card-title'>Sunrise</p>
 			</div>
 
 			<div className='row-card'>
 				<img src={SunsetImg} alt='some' className='card-icon' />
-				<p className='card-value'>{sunset} PM</p>
+				<p className='card-value'>{sunset}</p>
 				<p className='card-title'>Sunset</p>
 			</div>
 
 			<div className='row-card'>
 				<img src={DaytimeImg} alt='some' className='card-icon' />
 				<p className='card-value'>
-					{moment(weatherData.sys?.sunset).format('hh:mm')}{' '}
+			{sunrise}
 				</p>
 				<p className='card-title'>Daytime</p>
 			</div>

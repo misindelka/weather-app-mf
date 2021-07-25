@@ -49,7 +49,7 @@ export const MainScreen: React.FC = () => {
 		console.log('Forecast data fail!')
 	}
 
-	const handleChageCurrentCity = (name: any): void => {
+	const handleChageCurrentCity = (name: string): void => {
 		setCity(name)
 		setSearch(!search)
 	}

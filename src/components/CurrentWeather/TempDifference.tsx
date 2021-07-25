@@ -16,7 +16,7 @@ export const TempDifference: React.FC<IProps> = ({ temperature }) => {
 				{maxTemp} <span>&#8451;</span> <span >&#8593;</span>
 			</div>
 			<div className='temp-diff-item'>
-				{maxTemp} <span>&#8451;</span> <span>&#8595;</span>
+				{minTemp} <span>&#8451;</span> <span>&#8595;</span>
 			</div>
 		</div>
 	)

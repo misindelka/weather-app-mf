@@ -1,36 +1,38 @@
 import React from 'react'
-import { IForecastData } from '../../types'
+import { IForecastData, IForecastList } from '../../types'
 
 import './forecast.css'
-
-import * as Sunny from '../../assets/sunny.jpg'
-import * as Cloudy from '../../assets/cloudy.jpg'
-import * as Rainy from '../../assets/rainy.jpg'
 
 interface IForecastProps {
 	forecastData: IForecastData
 }
 
-const SunnyImg = Sunny.default
-const CloudyImg = Cloudy.default
-const RainyImg = Rainy.default
-
 export const Forecast: React.FC<IForecastProps> = ({ forecastData }) => {
-	const data = forecastData.list?.map((item: any) => item).slice(0, 3)
+	const data = forecastData.list?.map((item: IForecastList) => item).slice(1, 4)
 
-	const options: any = { weekday: 'short', day: 'numeric' }
+	const formatDate = (date: any) => {
+		const milliseconds = date * 1000
+		const dateObject = new Date(milliseconds)
+		const dateFormat = dateObject.toLocaleString('en-US', {
+			day: 'numeric',
+			weekday: 'short',
+		})
+		return dateFormat
+	}
 
 	return (
 		<div className='forecast'>
-			{data?.map((day: any) => (
+			{data?.map((day: IForecastList) => (
 				<div key={day.dt} className='forecast-card'>
-					<img src={SunnyImg} alt='some' className='forecast-icon' />
-					<div className='forecast-date'>
-						{new Date(day.dt).toLocaleDateString(
-							undefined,
-							options
-						)}
-					</div>
+					{day.weather?.map(({ icon, id} ) => (
+						<img key={id}
+							src={`http://openweathermap.org/img/w/${icon}.png`}
+							alt='some'
+							className='forecast-icon'
+						/>
+					))}
+
+					<div className='forecast-date'>{formatDate(day.dt)}</div>
 					<div className='temp-wrapper'>
 						<p>
 							{(day.main.temp_max - 273.15).toFixed()}
